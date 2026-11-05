@@ -1,7 +1,7 @@
 ---
 - name: Python set-up
   hosts: local
-  become: true
+  become: true  
 
   tasks:
     - name: Install Python packages
@@ -10,3 +10,8 @@
           - python3
           - python3-venv
           - python3-pip
+
+    - name: Ensure packages are updated
+      ansible.builtin.apt:
+        name: "*"
+        state: latest
