@@ -1,0 +1,16 @@
+---
+- name: Create virtual environment with Jupyter
+  hosts: local
+  become: false
+
+  tasks:
+    - name: Install Python packages into venv
+      ansible.builtin.pip:
+        name:
+          - jupyterlab
+          - numpy
+          - pandas
+          - matplotlib
+          - lightkurve
+        virtualenv: "{{ playbook_dir }}/../venv"
+        virtualenv_command: python3 -m venv
