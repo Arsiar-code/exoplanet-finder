@@ -1,13 +1,13 @@
 ---
-- name: Set up Python environment
+- name: Python set-up
   hosts: all
-  become: true
+  vars_files:
+    - root_pass.yml
+
   tasks:
     - name: Install Python packages
       ansible.builtin.apt:
-        name:
+        pkg:
           - python3
           - python3-venv
           - python3-pip
-        state: present
-        update_cache: true
