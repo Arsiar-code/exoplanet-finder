@@ -4,10 +4,10 @@
   become: true
   tasks:
     - name: Install Python packages
-    ansible.builtin.apt:
-      name:
-        - python3
-        - python3-venv
-        - python3-pip
-      state: present
-      update_cache: true
+      ansible.builtin.apt:
+        name:
+          - python3
+          - python3-venv
+          - python3-pip
+        state: present
+        update_cache: true
