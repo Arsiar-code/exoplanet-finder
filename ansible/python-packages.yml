@@ -1,8 +1,7 @@
 ---
 - name: Python set-up
-  hosts: all
-  vars_files:
-    - root_pass.yml
+  hosts: local
+  become: true
 
   tasks:
     - name: Install Python packages
